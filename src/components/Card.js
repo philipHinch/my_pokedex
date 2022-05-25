@@ -9,7 +9,17 @@ const Card = () => {
                     <img src={backCard} alt="back card image" />
                 </div>
                 <div className="frontCard">
-                    <p>front</p>
+                    <div className="cardImageContaier">
+                        <img src={backCard} alt="card image" />
+                    </div>
+                    <div className="cardInfoContainer">
+                        <h2 className="cardName">Pikachu</h2>
+                        <p className="type"> poison</p>
+                        {/* <div className="statsContainer">
+                            <small className="weight">weight:120</small>
+                            <small className="height">heigh:20</small>
+                        </div> */}
+                    </div>
                 </div>
 
             </div>
