@@ -1,10 +1,13 @@
+//css
 import './App.css';
+//components
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
       <main className='mainContainer'>
-        <h1 className='mainTitle'>My Podedex</h1>
+        <Header />
       </main>
     </div>
   );
