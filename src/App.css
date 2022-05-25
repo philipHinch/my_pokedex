@@ -48,6 +48,12 @@
     box-sizing: border-box;
 }
 .App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     /* height: 100vh;
     background-image: url('./assets/images/landscape_desktop_2.png');
     background-repeat: no-repeat;
@@ -56,6 +62,10 @@
     animation: fadeIn 1s ease forwards; */
 }
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     color: var(--black);
     font-family:var(--architect) ;
     font-size: 1rem;
@@ -164,6 +174,7 @@ form.container{
     box-shadow: none;
     padding: 0;
     margin: auto;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
@@ -273,14 +284,27 @@ form.container{
     border-radius: 5px;
     /* color: var(--white); */
 }
+/* spinner */
+.spinnerContainer{
+    transform: translateY(-280px);
+    /* margin-top: 50px; */
+}
+.spinnerImageContainer{
+    margin: auto;
+    width: 100px;
+    aspect-ratio: 1/1;
+    animation: spinning 1s ease-out infinite;
+}
+.spinnerImageContainer img{
+    width: 100%;
+}
 /* footer */
 footer{
+    background-color: #0075BE;
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    
+    padding: 10px;
 }
 .footerLink{
     margin-left: 10px;
@@ -304,6 +328,11 @@ footer{
     }
     100%{
         transform: rotateY( 180deg )
+    }
+}
+@keyframes spinning {
+    100%{
+        transform: rotate(360deg);
     }
 }
 /* media queries */
