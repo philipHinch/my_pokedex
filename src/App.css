@@ -37,16 +37,34 @@
     --architect: 'Architects Daughter', cursive;
     --fredoka: 'Fredoka One', cursive;
 }
+/* general variables */
+:root{
+    --box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+}
 /* general styles*/
 *,*::before,*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.App{
+    /* height: 100vh;
+    background-image: url('./assets/images/landscape_desktop_2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    animation: fadeIn 1s ease forwards; */
+}
 body{
     color: var(--black);
     font-family:var(--architect) ;
     letter-spacing: 2px;
+    height: 100vh;
+    background-image: url('./assets/images/landscape_desktop_2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    animation: fadeIn 1s ease forwards;
 }
 ul{
     list-style: none;
@@ -63,23 +81,36 @@ input{
     background-color: var(--white);
     border-radius: 50px;
     outline: none;
-    border: none;
+    border: 2px solid transparent;
     box-shadow: none;
     font-family: inherit;
     font-weight: bold;
     letter-spacing: 5px;
+    transition: all 0.2s ease-in-out;
 }
 input::placeholder{
     color: var(--gray-pokemon);
 }
+input:hover{
+    border-color: var(--yellow-pokemon);
+}
+input:focus{
+    border-color: var(--yellow-pokemon);
+
+}
 .container{
-    margin: auto;
+    margin: 50px auto;
     width: 80%;
+    max-width: 1200px;
     border-radius: 20px;
     padding: 50px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    /* box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1); */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
 }
 /* header */
 header {
@@ -88,24 +119,22 @@ header {
     justify-content: center;
     width: 100%;
     height: 200px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
 }
 header img{
     width: 100%;
     max-width: 400px;
 }
-/* main container */
-.mainContainer{
-    height: 100vh;
-    background-image: url('./assets/images/landscape_desktop_2.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
+
 /* form */
-form{
+form.container{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top:0;
 }
 .searchInputContainer{
     position: relative;
@@ -126,11 +155,95 @@ form{
     width: 30px;
     height: 30px;
     background: url('./assets/images/pokeball.png') no-repeat center center/cover;
-
+}
+/* main container */
+.container.mainContainer{
+    backdrop-filter: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+/* card */
+.card{
+    height: 268px;
+    width: 200px;
+    border-radius: 10px;
+    float: none;
+    perspective: 1000px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.8s;
+}
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    
+}
+.content{
+    transition: transform 2s;
+    animation: flip 1s ease-in-out forwards;
+    animation-delay: 2.5s;
+    /* transform: rotate3d(180deg); */
+}
+.frontCard,
+.backCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    box-shadow: 5px 5px 100px rgba(190, 251, 255, 0.544);
+}
+.backCard{
+    overflow: hidden;
+    background-color: #0075BE;
+}
+.backCard img{
+    width: 100%;
+    height: 100%;
+    transform: scale(1.09);
+}
+.frontCard {
+    display: block;
+    overflow: hidden;
+    transform: rotateY( 180deg );
+    background-color: var(--yellow-pokemon);
+}
+/* animations */
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes flip {
+    0%{
+        transform: rotateY( 0deg )
+    }
+    100%{
+        transform: rotateY( 180deg )
+    }
 }
 /* media queries */
 @media(max-width:700px){
-    .mainContainer{
+    body{
         background-position: bottom;
         background-image: url('./assets/images/landscape_mobile_2.jpg');
     }
@@ -140,6 +253,6 @@ form{
 }
 @media(max-width:500px){
     .container{
-        width: 98%;
+        /* width: 98%; */
     }
 }
