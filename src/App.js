@@ -4,6 +4,7 @@ import './App.css';
 import Form from './components/Form';
 import Header from './components/Header';
 import MainContainer from './components/MainContainer';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Form />
       <MainContainer />
       {/* </div> */}
+      <Footer />
     </div>
   );
 }

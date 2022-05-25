@@ -224,6 +224,22 @@ form.container{
     transform: rotateY( 180deg );
     background-color: var(--yellow-pokemon);
 }
+/* footer */
+footer{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    
+}
+.footerLink{
+    margin-left: 10px;
+    transition: color 0.2s ease-in-out;
+}
+.footerLink:hover{
+    color: var(--red-medium-pokemon);
+}
 /* animations */
 @keyframes fadeIn {
     0%{
