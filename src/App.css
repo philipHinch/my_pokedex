@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredoka+One&display=swap');
 /* color variables */
 :root{
+    --black:#303030;
+    --white:#f6f6f6;
+    --yellow-pokemon:#FFCC00;
+    --light-blue-pokemon:#0075BE;
+    --dark-blue-pokemon: #0A285F;
+    --red-bright-pokemon:#FB1B1B;
+    --red-medium-pokemon: #CE2211;
+    --red-light-pokemon:#E54222;
+    --gray-pokemon: #DFDFDF;
+}
+/* pokemon color variables */
+:root{
     --normal:#a8a77a;
     --fire: #ee8130;
     --water: #6390f0;
@@ -25,14 +37,16 @@
     --architect: 'Architects Daughter', cursive;
     --fredoka: 'Fredoka One', cursive;
 }
-/* general */
+/* general styles*/
 *,*::before,*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    color: var(--black);
     font-family:var(--architect) ;
+    letter-spacing: 2px;
 }
 ul{
     list-style: none;
@@ -43,6 +57,29 @@ a{
 }
 h1, h2,h3,h4,h5,h6{
     font-family: var(--fredoka);
+}
+input{
+    color: inherit;
+    background-color: var(--white);
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+input::placeholder{
+    color: var(--gray-pokemon);
+}
+.container{
+    margin: auto;
+    width: 80%;
+    border-radius: 20px;
+    padding: 50px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
 }
 /* header */
 header {
@@ -64,10 +101,45 @@ header img{
     background-attachment: fixed;
     background-position: center;
 }
+/* form */
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchInputContainer{
+    position: relative;
+}
+#searchInput{
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    padding-left: 55px;
+    text-align: center;
+}
+.searchInputContainer::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    background: url('./assets/images/pokeball.png') no-repeat center center/cover;
+
+}
 /* media queries */
 @media(max-width:700px){
     .mainContainer{
         background-position: bottom;
         background-image: url('./assets/images/landscape_mobile_2.jpg');
+    }
+    .container{
+        width: 95%;
+    }
+}
+@media(max-width:500px){
+    .container{
+        width: 98%;
     }
 }
