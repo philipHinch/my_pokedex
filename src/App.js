@@ -7,7 +7,7 @@ import MainContainer from './components/MainContainer';
 import Footer from './components/Footer';
 import Spinner from './components/Spinner';
 //hooks
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 //context
 import { PokemonContext } from './context/PokemonContext';
 
@@ -17,11 +17,13 @@ function App() {
   const context = useContext(PokemonContext)
   const { isLoading } = context
 
+  const [isSearching, setIsSearching] = useState(false)
+
   return (
     <div className="App">
       <Header />
-      {!isLoading && <Form />}
-      < MainContainer isLoading={isLoading} />
+      {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} />}
+      < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} />
       {isLoading && <Spinner />}
       <Footer />
     </div>

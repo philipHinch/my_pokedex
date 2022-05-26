@@ -5,6 +5,11 @@ export const PokemonReducer = (state, action) => {
                 ...state,
                 data: action.payload
             }
+        case 'SET_ALL_POKEMONS_DATA':
+            return {
+                ...state,
+                allPokemonsData: action.payload
+            }
         case 'SET_SEARCH_VALUE':
             return {
                 ...state,

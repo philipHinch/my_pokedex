@@ -178,6 +178,20 @@ input:focus{
     /* animation-delay: 1s; */
     opacity: 0;
 }
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 /* header */
 header {
     display: flex;
@@ -250,7 +264,7 @@ form.container{
     transition: transform 0.2s ease-in-out;
 }
 .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 .content {
     position: absolute;
@@ -345,16 +359,21 @@ form.container{
     overflow-x: scroll;
 }
 .prevBtn,.nextBtn,.pageBtn{
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     margin-right:3px ;
     padding: 3px 6px;
     font-size: 1rem;
-    color: var(--white);
+    color: var(--black);
     cursor: pointer;
-    background-color: var(--red-medium-pokemon);
+    background-color: var(--gray-pokemon);
+    margin-bottom: 3px;
+    transition: all 0.2s ease-in-out;
+}
+.prevBtn:hover,.nextBtn:hover,.pageBtn:hover{
+    background-color: var(--yellow-pokemon);
 }
 .activePageBtn{
-    background-color: var(--electric);
+    background-color: var(--yellow-pokemon);
 }
 /* spinner */
 .spinnerContainer{
