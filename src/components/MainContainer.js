@@ -1,22 +1,25 @@
 //hooks
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 //components
 import Card from './Card'
+//context
+import { PokemonContext } from '../context/PokemonContext';
 
-const MainContainer = ({ isLoading, setIsLoading }) => {
 
-    //max num of pokemon
-    const maxNumPokemon = 898
-    const cardsPerPage = 20;
+const MainContainer = () => {
 
-    const [data, setData] = useState(null)
+    //context
+    const context = useContext(PokemonContext)
+    const { dispatch, data, isLoading } = context
+
+    //const [data, setData] = useState(null)
     const [currentPage, setCurrentPage] = useState(1);
     const [numOfPages, setNumOfPages] = useState(null);
+
+    const maxNumPokemon = 898
+    const cardsPerPage = 20;
     const indexOfLastPost = currentPage * cardsPerPage;
     const indexOfFirstPost = indexOfLastPost - cardsPerPage;
-    //const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
-
-    const pageResults = cardsPerPage * (currentPage)
 
     //fetches data on initial page load
     useEffect(() => {
@@ -24,7 +27,7 @@ const MainContainer = ({ isLoading, setIsLoading }) => {
     }, [])
 
     const getData = () => {
-        setIsLoading(true)
+        dispatch({ type: 'SET_IS_LOADING', payload: true })
         const promises = [];
         for (let i = 1; i <= maxNumPokemon; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${ i }`;
@@ -34,8 +37,8 @@ const MainContainer = ({ isLoading, setIsLoading }) => {
             setNumOfPages(Math.ceil(results.length / cardsPerPage));
             let arr = results.slice(indexOfFirstPost, indexOfLastPost)
             console.log(arr);
-            setData(arr)
-            setIsLoading(false)
+            dispatch({ type: 'SET_DATA', payload: arr })
+            dispatch({ type: 'SET_IS_LOADING', payload: false })
         });
     };
 
