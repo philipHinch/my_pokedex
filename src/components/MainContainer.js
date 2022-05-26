@@ -11,9 +11,7 @@ const MainContainer = ({ isSearching, setIsSearching }) => {
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, data, isLoading, currentPage, searchValue } = context
-
-    const [allPokemons, setAllPokemons] = useState(null)
+    const { dispatch, data, isLoading, currentPage, searchValue, watchlist } = context
 
     // const [currentPage, setCurrentPage] = useState(1);
     //const [numOfPages, setNumOfPages] = useState(null);
@@ -55,10 +53,10 @@ const MainContainer = ({ isSearching, setIsSearching }) => {
     return (
         <main className="mainContainer container">
             {!isLoading && data && !isSearching && data.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} />
+                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} />
             ))}
             {!isLoading && searchValue && isSearching && searchValue.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} />
+                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} />
             ))}
             {!isLoading && !isSearching && <Pagination />}
         </main>

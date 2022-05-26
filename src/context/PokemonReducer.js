@@ -35,6 +35,11 @@ export const PokemonReducer = (state, action) => {
                 ...state,
                 numOfPages: action.payload
             }
+        case 'SET_WATCHLIST':
+            return {
+                ...state,
+                watchlist: action.payload
+            }
         case 'SET_IS_LOADING':
             return {
                 ...state,

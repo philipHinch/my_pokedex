@@ -251,6 +251,7 @@ form.container{
 }
 /* card */
 .card{
+    position: relative;
     height: 268px;
     width: 200px;
     border-radius: 10px;
@@ -260,11 +261,21 @@ form.container{
     /* opacity: 1; */
     animation: fadeIn 1s ease forwards;
     /* animation-delay: 1.8s; */
-    
     transition: transform 0.2s ease-in-out;
 }
 .card:hover{
     transform: scale(1.02);
+}
+.heartIcon{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 1.6rem;
+    color: #999;
+    opacity: 0.7;
+}
+.heartActive{
+    color: crimson;
 }
 .content {
     position: absolute;
@@ -423,6 +434,17 @@ footer{
 @keyframes spinning {
     100%{
         transform: rotate(360deg);
+    }
+}
+@keyframes wobble {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
     }
 }
 /* media queries */
