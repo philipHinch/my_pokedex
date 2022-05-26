@@ -209,7 +209,7 @@ form.container{
 .content{
     transition: transform 2s;
     animation: flip 1s ease-in-out forwards;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
     /* transform: rotate3d(180deg); */
 }
 .frontCard,
@@ -300,7 +300,6 @@ form.container{
 }
 /* footer */
 footer{
-    background-color: #0075BE;
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;

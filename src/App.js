@@ -11,13 +11,13 @@ import { useState } from 'react';
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   return (
     <div className="App">
       <Header />
       {!isLoading && <Form />}
-      {!isLoading && < MainContainer setLoading={setIsLoading} />}
+      < MainContainer isLoading={isLoading} setIsLoading={setIsLoading} />
       {isLoading && <Spinner />}
       <Footer />
     </div>
