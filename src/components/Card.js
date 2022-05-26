@@ -14,7 +14,7 @@ const Card = ({ type, image, name }) => {
                     </div>
                     <div className="cardInfoContainer">
                         <h2 className="cardName">{name}</h2>
-                        <p className="type">{type}</p>
+                        <p className={`type ${ type }`}>{type}</p>
                         {/* <div className="statsContainer">
                             <small className="weight">weight:120</small>
                             <small className="height">heigh:20</small>

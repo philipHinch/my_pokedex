@@ -14,6 +14,8 @@ export const ContextProvider = ({ children }) => {
             pokemon_2: null,
             searchValue: null,
             isLoading: true,
+            currentPage: 1,
+            numOfPages: null
         }
     )
 
