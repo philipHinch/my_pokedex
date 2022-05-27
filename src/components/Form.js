@@ -48,7 +48,10 @@ const Form = ({ setIsSearching, isCompare, setIsCompare }) => {
             {isCompare && <CompareContainer />}
             {/* {(pokemon_1 || pokemon_2) && <CompareContainer />} */}
             {/* {!pokemon_1 && !pokemon_2 && <h4 className='selectPokemonTitle'>Select pokemon to compare stats</h4>} */}
-            <button className="compareBtn" onClick={handleCompareBtnClick}>{isCompare ? 'Close' : 'Compare Stats'}</button>
+            <div className="formButtonContainer">
+                <button className="compareBtn" onClick={handleCompareBtnClick}>{isCompare ? 'Close' : 'Compare'}</button>
+                <button className="viewFavourites">Favourites</button>
+            </div>
         </form>
     );
 }

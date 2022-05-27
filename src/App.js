@@ -25,7 +25,6 @@ function App() {
       <Header />
       {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} setIsCompare={setIsCompare} />}
       < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} />
-
       {isLoading && <Spinner />}
       <Footer />
     </div>
