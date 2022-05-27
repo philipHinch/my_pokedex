@@ -572,6 +572,44 @@ form.container{
 .spinnerImageContainer img{
     width: 100%;
 }
+/* favourites */
+.favouritesContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+}
+.innerFavouritesContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    background-color:var(--white);
+}
+.favouritesCardContainer{
+}
+.closeIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: opacity 0.2s ease-in-out;
+}
+.closeIcon:hover{
+    opacity: 0.6;
+}
+.showFavouites{
+    animation: slideDown 0.2s ease-in-out;
+}
+.hideFavourites{
+    transform: translateY(-2000px);
+}
 /* footer */
 footer{
     text-align: center;
@@ -587,6 +625,14 @@ footer{
     color: var(--red-medium-pokemon);
 }
 /* animations */
+@keyframes slideDown {
+    0%{
+        transform: translateY(-2000px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 @keyframes fadeIn {
     0%{
         opacity: 0;

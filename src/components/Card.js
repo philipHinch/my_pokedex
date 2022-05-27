@@ -11,20 +11,20 @@ const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) 
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, watchlist } = context
+    const { dispatch, favourites } = context
 
-    const [heartActive, setHeartActive] = useState(watchlist.includes(id) ? 'heartActive' : '')
+    const [heartActive, setHeartActive] = useState(favourites.includes(id) ? 'heartActive' : '')
 
     //set icon class on page load
     useEffect(() => {
-        setHeartActive(watchlist.includes(id.toString()) ? 'heartActive' : '')
+        setHeartActive(favourites.includes(id.toString()) ? 'heartActive' : '')
     }, [])
 
     //handles heart icon click and local storage
     const handleHeartClick = (e) => {
         //get pokemon id
         const pokeID = (e.target.id) || e.target.parentElement.id;
-        let arr = watchlist
+        let arr = favourites
         if (arr.includes(pokeID)) {
             //remove active class from icon
             setHeartActive('')
@@ -32,17 +32,17 @@ const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) 
             let index = arr.indexOf(pokeID);
             //remove id from array
             arr.splice(index, 1);
-            console.log(watchlist);
+            console.log(favourites);
             //save updated array to local storage
-            localStorage.setItem('watchlist', JSON.stringify(arr))
+            localStorage.setItem('favourites', JSON.stringify(arr))
         } else {
             //add active class to icon
             setHeartActive('heartActive')
             //push pokemon id to array
             arr.push(pokeID);
             //save new array to local storage
-            localStorage.setItem('watchlist', JSON.stringify(arr));
-            console.log(watchlist);
+            localStorage.setItem('favourites', JSON.stringify(arr));
+            console.log(favourites);
         }
     }
 

@@ -45,10 +45,10 @@ export const PokemonReducer = (state, action) => {
                 ...state,
                 numOfPages: action.payload
             }
-        case 'SET_WATCHLIST':
+        case 'SET_FAVOURITES':
             return {
                 ...state,
-                watchlist: action.payload
+                favourites: action.payload
             }
         case 'SET_IS_LOADING':
             return {

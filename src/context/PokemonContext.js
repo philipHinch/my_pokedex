@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
             currentPage: 1,
             numOfPages: null,
             allPokemonsData: null,
-            watchlist: JSON.parse(localStorage.getItem('watchlist')) || []
+            favourites: JSON.parse(localStorage.getItem('favourites')) || []
         }
     )
 

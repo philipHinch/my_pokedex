@@ -10,6 +10,7 @@ import Spinner from './components/Spinner';
 import { useContext, useState } from 'react';
 //context
 import { PokemonContext } from './context/PokemonContext';
+import Favourites from './components/Favourites';
 
 function App() {
 
@@ -19,13 +20,16 @@ function App() {
 
   const [isSearching, setIsSearching] = useState(false)
   const [isCompare, setIsCompare] = useState(false)
+  const [isFavourites, setIsFavourites] = useState(false)
+  const [favouritesData, setFavouritesData] = useState(null)
 
   return (
     <div className="App">
       <Header />
-      {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} setIsCompare={setIsCompare} />}
+      {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} setIsCompare={setIsCompare} isFavourites={isFavourites} setIsFavourites={setIsFavourites} setFavouritesData={setFavouritesData} />}
       < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} />
       {isLoading && <Spinner />}
+      < Favourites isFavourites={isFavourites} setIsFavourites={setIsFavourites} favouritesData={favouritesData} />
       <Footer />
     </div>
   );

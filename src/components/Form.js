@@ -5,11 +5,11 @@ import { PokemonContext } from '../context/PokemonContext';
 //components
 import CompareContainer from './CompareContainer';
 
-const Form = ({ setIsSearching, isCompare, setIsCompare }) => {
+const Form = ({ setIsSearching, isCompare, setIsCompare, isFavourites, setIsFavourites, setFavouritesData }) => {
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, allPokemonsData } = context
+    const { dispatch, allPokemonsData, favourites } = context
 
     //search pokemon
     const handleSearch = async (e) => {
@@ -35,9 +35,20 @@ const Form = ({ setIsSearching, isCompare, setIsCompare }) => {
         setIsCompare(!isCompare)
     }
 
+    const handleFavouritesClick = () => {
+        setIsFavourites(true)
+        getFavouritesData()
+    }
+
     //prevents form from submitting
     const handleSubmit = (e) => {
         e.preventDefault()
+    }
+
+    const getFavouritesData = () => {
+        let arr = allPokemonsData.filter(e => favourites.includes(e.id.toString()))
+        setFavouritesData(arr)
+        console.log(arr);
     }
 
     return (
@@ -50,7 +61,7 @@ const Form = ({ setIsSearching, isCompare, setIsCompare }) => {
             {/* {!pokemon_1 && !pokemon_2 && <h4 className='selectPokemonTitle'>Select pokemon to compare stats</h4>} */}
             <div className="formButtonContainer">
                 <button className="compareBtn" onClick={handleCompareBtnClick}>{isCompare ? 'Close' : 'Compare'}</button>
-                <button className="viewFavourites">Favourites</button>
+                <button className="viewFavourites" onClick={handleFavouritesClick}>Favourites</button>
             </div>
         </form>
     );
