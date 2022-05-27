@@ -53,10 +53,10 @@ const MainContainer = ({ isSearching, setIsSearching }) => {
     return (
         <main className="mainContainer container">
             {!isLoading && data && !isSearching && data.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} />
+                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} />
             ))}
             {!isLoading && searchValue && isSearching && searchValue.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} />
+                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} />
             ))}
             {!isLoading && !isSearching && <Pagination />}
         </main>

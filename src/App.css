@@ -188,9 +188,11 @@ input:focus{
 }
 ::-webkit-scrollbar-thumb {
     background: #888;
+    background: var(--black);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+    background: var(--red-medium-pokemon);
 }
 /* header */
 header {
@@ -212,6 +214,7 @@ header img{
 /* form */
 form.container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top:0;
@@ -276,6 +279,33 @@ form.container{
 }
 .heartActive{
     color: crimson;
+    animation: wobble 0.2s ease-in-out;
+}
+.compareIcon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    height:30px;
+    background-color: var(--white);
+    border-radius: 50px;
+    border: 1px solid var(--black);
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: all 0.2s ease-in-out;
+}
+.compareIcon1{
+    top: 2px;
+    left: 2px;
+    background-color: var(--yellow-pokemon);
+}
+.compareIcon2{
+    top: 35px;
+    left: 2px;
+    color: var(--white);
+    background-color: var(--dark-blue-pokemon);
 }
 .content {
     position: absolute;
@@ -357,11 +387,37 @@ form.container{
 }
 .type{
     font-size: 1rem;
-    border: 1px solid var(--black);
+    /* border: 1px solid var(--black); */
     padding: 5px 10px;
     font-weight: bold;
     border-radius: 5px;
     /* color: var(--white); */
+}
+/* compare container */
+.compareContainer{
+    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--white);
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+.compareTitle{
+    text-align: center;
+    margin:20px auto;
+}
+.compareStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.compareStats li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.compareText{
+    font-size: 1.2rem;
 }
 /* pagination */
 .paginationContainer{
@@ -441,7 +497,7 @@ footer{
         transform: scale(1);
     }
     50%{
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
     100%{
         transform: scale(1);

@@ -2,6 +2,7 @@
 import { useContext, useState } from 'react';
 //context
 import { PokemonContext } from '../context/PokemonContext';
+import CompareContainer from './CompareContainer';
 
 const Form = ({ isSearching, setIsSearching }) => {
 
@@ -34,6 +35,7 @@ const Form = ({ isSearching, setIsSearching }) => {
             <div className="searchInputContainer">
                 <input type="text" name="searchInput" id="searchInput" placeholder="Search..." autoFocus onChange={handleSearch} />
             </div>
+            <CompareContainer />
         </form>
     );
 }

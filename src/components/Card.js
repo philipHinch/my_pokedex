@@ -7,7 +7,7 @@ import backCard from '../assets/images/back_card.png'
 //hooks
 import { useContext, useEffect, useState } from 'react';
 
-const Card = ({ type, image, name, id }) => {
+const Card = ({ type, image, name, id, hp }) => {
 
     //context
     const context = useContext(PokemonContext)
@@ -46,6 +46,10 @@ const Card = ({ type, image, name, id }) => {
         }
     }
 
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
         <div className="card">
             <div className="content">
@@ -53,15 +57,19 @@ const Card = ({ type, image, name, id }) => {
                     <img src={backCard} alt="back card image" />
                 </div>
                 <div className="frontCard" >
-                    {/* {!watchlist.includes(id) && <Icon icon="akar-icons:heart" className='heartIcon' onClick={handleHeartClick} id={id} />} */}
-                    {/* {watchlist.includes(id.toString()) ? <Icon icon="ant-design:heart-filled" className='heartIcon' onClick={handleHeartClick} id={id} /> : <Icon icon="akar-icons:heart" className='heartIcon' onClick={handleHeartClick} id={id} />} */}
+                    <small className="compareIcon compareIcon1">1</small>
+                    <small className="compareIcon compareIcon2">2</small>
                     <Icon icon="ant-design:heart-filled" className={`heartIcon ${ heartActive }`} onClick={handleHeartClick} id={id} />
+                    {/* <p className="hp">hp {hp}</p> */}
                     <div className="cardImageContaier">
                         <img src={image} alt="card image" />
                     </div>
                     <div className="cardInfoContainer">
-                        <h2 className="cardName">{name}</h2>
-                        <p className={`type ${ type }`}>{type}</p>
+                        <h2 className="cardName">{capitalizeFirstLetter(name)}</h2>
+                        <div className="pokemonStats">
+                            {/* <p className="attack">attack:{hp}</p> */}
+                        </div>
+                        <p className={`type ${ type }`}>{capitalizeFirstLetter(type)}</p>
                         {/* <div className="statsContainer">
                             <small className="weight">weight:120</small>
                             <small className="height">heigh:20</small>

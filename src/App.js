@@ -18,12 +18,14 @@ function App() {
   const { isLoading } = context
 
   const [isSearching, setIsSearching] = useState(false)
+  const [isCompare, setIsCompare] = useState(false)
 
   return (
     <div className="App">
       <Header />
       {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} />}
       < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} />
+
       {isLoading && <Spinner />}
       <Footer />
     </div>
