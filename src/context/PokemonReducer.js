@@ -15,6 +15,16 @@ export const PokemonReducer = (state, action) => {
                 ...state,
                 searchValue: action.payload
             }
+        case 'SET_POKEMON_1':
+            return {
+                ...state,
+                pokemon_1: action.payload
+            }
+        case 'SET_POKEMON_2':
+            return {
+                ...state,
+                pokemon_2: action.payload
+            }
         case 'SET_CURRENT_PAGE':
             return {
                 ...state,
