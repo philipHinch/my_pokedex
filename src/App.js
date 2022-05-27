@@ -21,7 +21,7 @@ function App() {
   const [isSearching, setIsSearching] = useState(false)
   const [isCompare, setIsCompare] = useState(false)
   const [isFavourites, setIsFavourites] = useState(false)
-  const [favouritesData, setFavouritesData] = useState(null)
+  const [favouritesData, setFavouritesData] = useState([])
 
   return (
     <div className="App">

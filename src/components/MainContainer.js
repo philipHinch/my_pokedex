@@ -36,7 +36,6 @@ const MainContainer = ({ isSearching, isCompare }) => {
         }
         //send data to context
         return Promise.all(promises).then((results) => {
-            console.log(results);
             dispatch({ type: 'SET_ALL_POKEMONS_DATA', payload: results })
             dispatch({ type: 'SET_NUM_OF_PAGES', payload: Math.ceil(results.length / cardsPerPage) + 1 })
             //slice data to amount of decided cards per page

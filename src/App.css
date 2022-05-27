@@ -559,6 +559,8 @@ form.container{
     overflow-y: scroll;
     background-color:var(--white);
     border: 5px solid var(--yellow-pokemon);
+    border-radius: 20px;
+    overflow-x: hidden;
 }
 .favouritesTitle{
     margin-top: 50px;

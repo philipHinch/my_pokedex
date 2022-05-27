@@ -47,8 +47,10 @@ const Form = ({ setIsSearching, isCompare, setIsCompare, setIsFavourites, setFav
 
     //get favourite pokemon data. local storage only has id stored. here we filter and compare the complete data with the ids in local storage
     const getFavouritesData = () => {
-        let arr = allPokemonsData.filter(e => favourites.includes(e.id.toString()))
-        setFavouritesData(arr)
+        if (favourites) {
+            let arr = allPokemonsData.filter(e => favourites.includes(e.id.toString()))
+            setFavouritesData(arr)
+        }
     }
 
     return (

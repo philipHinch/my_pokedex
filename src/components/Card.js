@@ -32,7 +32,6 @@ const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) 
             let index = arr.indexOf(pokeID);
             //remove id from array
             arr.splice(index, 1);
-            console.log(favourites);
             //save updated array to local storage
             localStorage.setItem('favourites', JSON.stringify(arr))
         } else {
@@ -42,7 +41,6 @@ const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) 
             arr.push(pokeID);
             //save new array to local storage
             localStorage.setItem('favourites', JSON.stringify(arr));
-            console.log(favourites);
         }
     }
 
