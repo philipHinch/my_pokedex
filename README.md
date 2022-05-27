@@ -24,12 +24,15 @@ This project is for a 3SC Web Developer Test. This task is designed to assess ho
 Desktop:
 &nbsp;
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview.png?raw=true)
+---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview_2.png?raw=true)
+---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview_3.png?raw=true)
 Mobile:
-&nbsp;
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_mobile_preview.jpg?raw=true)
+---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_mobile_preview_2.jpg?raw=true)
+---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_mobile_preview_3.jpg?raw=true)
 &nbsp;
 [View Project](https://my-pokedex-nu.vercel.app/)
