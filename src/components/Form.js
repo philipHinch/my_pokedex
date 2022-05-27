@@ -2,6 +2,7 @@
 import { useContext, useState } from 'react';
 //context
 import { PokemonContext } from '../context/PokemonContext';
+//components
 import CompareContainer from './CompareContainer';
 
 const Form = ({ isSearching, setIsSearching }) => {
