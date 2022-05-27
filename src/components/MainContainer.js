@@ -41,7 +41,6 @@ const MainContainer = ({ isSearching, isCompare }) => {
             dispatch({ type: 'SET_NUM_OF_PAGES', payload: Math.ceil(results.length / cardsPerPage) + 1 })
             //slice data to amount of decided cards per page
             let arr = results.slice(indexOfFirstPost, indexOfLastPost)
-            // console.log(arr);
             dispatch({ type: 'SET_DATA', payload: arr })
             dispatch({ type: 'SET_IS_LOADING', payload: false })
         });

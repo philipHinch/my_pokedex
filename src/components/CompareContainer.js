@@ -2,6 +2,8 @@
 import { useContext } from 'react';
 //context
 import { PokemonContext } from '../context/PokemonContext';
+//images
+import pokeball from '../assets/images/pokeball.png'
 
 const CompareContainer = () => {
 
@@ -17,10 +19,10 @@ const CompareContainer = () => {
     return (
         <div className="compareContainer">
             <div className="pokemon1ImageContainer">
-                <img src={pokemon_1 ? pokemon_1.image : ''} alt="" className='pokemon1Image' />
+                <img src={pokemon_1 ? pokemon_1.image : pokeball} alt="" className='pokemon1Image' />
             </div>
             <div className="pokemon2ImageContainer">
-                <img src={pokemon_2 ? pokemon_2.image : ''} alt="" className='pokemon2Image' />
+                <img src={pokemon_2 ? pokemon_2.image : pokeball} alt="" className='pokemon2Image' />
             </div>
             <div className="compareTitleContainer">
                 <h3 className="compareTitle">Stats</h3>
@@ -31,7 +33,6 @@ const CompareContainer = () => {
             </div>
             <div className="compareInnerContainer">
                 <div className="pokemon1">
-
                 </div>
                 <ul className="compareStats">
                     <li className="stat hpStat">
@@ -56,7 +57,6 @@ const CompareContainer = () => {
                     </li>
                 </ul>
                 <div className="pokemon2">
-
                 </div>
             </div>
         </div>

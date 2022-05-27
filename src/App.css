@@ -540,7 +540,6 @@ form.container{
 /* spinner */
 .spinnerContainer{
     transform: translateY(-400px);
-    /* margin-top: 50px; */
 }
 .spinnerImageContainer{
     margin: auto;

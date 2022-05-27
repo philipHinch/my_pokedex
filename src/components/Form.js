@@ -5,7 +5,7 @@ import { PokemonContext } from '../context/PokemonContext';
 //components
 import CompareContainer from './CompareContainer';
 
-const Form = ({ setIsSearching, isCompare, setIsCompare, isFavourites, setIsFavourites, setFavouritesData }) => {
+const Form = ({ setIsSearching, isCompare, setIsCompare, setIsFavourites, setFavouritesData }) => {
 
     //context
     const context = useContext(PokemonContext)
@@ -45,10 +45,10 @@ const Form = ({ setIsSearching, isCompare, setIsCompare, isFavourites, setIsFavo
         e.preventDefault()
     }
 
+    //get favourite pokemon data. local storage only has id stored. here we filter and compare the complete data with the ids in local storage
     const getFavouritesData = () => {
         let arr = allPokemonsData.filter(e => favourites.includes(e.id.toString()))
         setFavouritesData(arr)
-        console.log(arr);
     }
 
     return (
@@ -57,8 +57,6 @@ const Form = ({ setIsSearching, isCompare, setIsCompare, isFavourites, setIsFavo
                 <input type="text" name="searchInput" id="searchInput" placeholder="Search..." autoFocus onChange={handleSearch} />
             </div>
             {isCompare && <CompareContainer />}
-            {/* {(pokemon_1 || pokemon_2) && <CompareContainer />} */}
-            {/* {!pokemon_1 && !pokemon_2 && <h4 className='selectPokemonTitle'>Select pokemon to compare stats</h4>} */}
             <div className="formButtonContainer">
                 <button className="compareBtn" onClick={handleCompareBtnClick}>{isCompare ? 'Close' : 'Compare'}</button>
                 <button className="viewFavourites" onClick={handleFavouritesClick}>Favourites</button>

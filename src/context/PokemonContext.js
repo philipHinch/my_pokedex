@@ -1,4 +1,6 @@
+//context
 import { createContext, useReducer } from "react"
+//reducer
 import { PokemonReducer } from "./PokemonReducer"
 
 //create context

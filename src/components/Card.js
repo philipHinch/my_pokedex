@@ -71,23 +71,16 @@ const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) 
                     {isCompare && <small className="compareIcon compareIcon1" id={id} onClick={compareButtonClick}>1</small>}
                     {isCompare && < small className="compareIcon compareIcon2" id={id} onClick={compareButtonClick}>2</small>}
                     <Icon icon="ant-design:heart-filled" className={`heartIcon ${ heartActive }`} onClick={handleHeartClick} id={id} />
-                    {/* <p className="hp">hp {hp}</p> */}
                     <div className="cardImageContaier">
                         <img src={image} alt="card image" />
                     </div>
                     <div className="cardInfoContainer">
                         <h2 className="cardName">{capitalizeFirstLetter(name)}</h2>
                         <div className="pokemonStats">
-                            {/* <p className="attack">attack:{hp}</p> */}
                         </div>
                         <p className={`type ${ type }`}>{capitalizeFirstLetter(type)}</p>
-                        {/* <div className="statsContainer">
-                            <small className="weight">weight:120</small>
-                            <small className="height">heigh:20</small>
-                        </div> */}
                     </div>
                 </div>
-
             </div>
         </div >
     );
