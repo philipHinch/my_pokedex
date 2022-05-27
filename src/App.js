@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {!isLoading && <Form isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} setIsCompare={setIsCompare} isFavourites={isFavourites} setIsFavourites={setIsFavourites} setFavouritesData={setFavouritesData} />}
-      < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} />
+      {!isLoading && !isFavourites && <Form isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} setIsCompare={setIsCompare} isFavourites={isFavourites} setIsFavourites={setIsFavourites} setFavouritesData={setFavouritesData} />}
+      {!isFavourites && < MainContainer isLoading={isLoading} isSearching={isSearching} setIsSearching={setIsSearching} isCompare={isCompare} />}
       {isLoading && <Spinner />}
       < Favourites isFavourites={isFavourites} setIsFavourites={setIsFavourites} favouritesData={favouritesData} />
       <Footer />
