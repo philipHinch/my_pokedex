@@ -1,15 +1,15 @@
 //hooks
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 //context
 import { PokemonContext } from '../context/PokemonContext';
 //components
 import CompareContainer from './CompareContainer';
 
-const Form = ({ isSearching, setIsSearching }) => {
+const Form = ({ setIsSearching, isCompare, setIsCompare }) => {
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, data, allPokemonsData, isLoading, currentPage, numOfPages } = context
+    const { dispatch, allPokemonsData } = context
 
     //search pokemon
     const handleSearch = async (e) => {
@@ -27,16 +27,28 @@ const Form = ({ isSearching, setIsSearching }) => {
             }
         })
         dispatch({ type: 'SET_SEARCH_VALUE', payload: filteredArr })
-        //dispatch({ type: 'SET_DATA', payload: filteredArr })
         dispatch({ type: 'SET_IS_LOADING', payload: false })
     }
 
+    //show/hide compare container
+    const handleCompareBtnClick = () => {
+        setIsCompare(!isCompare)
+    }
+
+    //prevents form from submitting
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return (
-        <form className="container">
+        <form className="container" onSubmit={handleSubmit}>
             <div className="searchInputContainer">
                 <input type="text" name="searchInput" id="searchInput" placeholder="Search..." autoFocus onChange={handleSearch} />
             </div>
-            <CompareContainer />
+            {isCompare && <CompareContainer />}
+            {/* {(pokemon_1 || pokemon_2) && <CompareContainer />} */}
+            {/* {!pokemon_1 && !pokemon_2 && <h4 className='selectPokemonTitle'>Select pokemon to compare stats</h4>} */}
+            <button className="compareBtn" onClick={handleCompareBtnClick}>{isCompare ? 'Close' : 'Compare Stats'}</button>
         </form>
     );
 }

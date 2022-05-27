@@ -1,5 +1,5 @@
 //hooks
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 //context
 import { PokemonContext } from '../context/PokemonContext';
 
@@ -9,6 +9,7 @@ const CompareContainer = () => {
     const context = useContext(PokemonContext)
     const { pokemon_1, pokemon_2 } = context
 
+    //capitalize first letter function
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -22,7 +23,7 @@ const CompareContainer = () => {
                 <img src={pokemon_2 ? pokemon_2.image : ''} alt="" className='pokemon2Image' />
             </div>
             <div className="compareTitleContainer">
-                <h3 className="compareTitle">Compare Pokemon</h3>
+                <h3 className="compareTitle">Stats</h3>
             </div>
             <div className="comparePokemonNames">
                 <h4 className="pokemonName1">{pokemon_1 ? capitalizeFirstLetter(pokemon_1.name) : '??'}</h4>
@@ -36,7 +37,7 @@ const CompareContainer = () => {
                     <li className="stat hpStat">
                         <small className="hpPokemon1 compareText yellow">{pokemon_1 ? pokemon_1.hp : '??'}</small>
                         <small className="hpText compareText">HP</small>
-                        <small className="hpPokemon2 compareText blue">{pokemon_2 ? pokemon_1.hp : '??'}</small>
+                        <small className="hpPokemon2 compareText blue">{pokemon_2 ? pokemon_2.hp : '??'}</small>
                     </li>
                     <li className="stat attackStat">
                         <small className="attackPokemon1 compareText yellow">{pokemon_1 ? pokemon_1.attack : '??'}</small>

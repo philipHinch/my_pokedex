@@ -7,11 +7,11 @@ import backCard from '../assets/images/back_card.png'
 //hooks
 import { useContext, useEffect, useState } from 'react';
 
-const Card = ({ type, image, name, id, hp, attack, defence, speed }) => {
+const Card = ({ isCompare, type, image, name, id, hp, attack, defence, speed }) => {
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, data, watchlist, pokemon_1 } = context
+    const { dispatch, watchlist } = context
 
     const [heartActive, setHeartActive] = useState(watchlist.includes(id) ? 'heartActive' : '')
 
@@ -46,20 +46,19 @@ const Card = ({ type, image, name, id, hp, attack, defence, speed }) => {
         }
     }
 
+    //function to capitalize first letter
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    //pokemon compare button 1 or 2 click sends data to context
     const compareButtonClick = (e) => {
-        const arr = []
         //send data to context
         if (e.target.textContent === '1') {
             dispatch({ type: 'SET_POKEMON_1', payload: { name, hp, attack, defence, speed, image } })
         } else if (e.target.textContent === '2') {
             dispatch({ type: 'SET_POKEMON_2', payload: { name, hp, attack, defence, speed, image } })
         }
-
-        //dispatch({ type: 'SET_IS_LOADING', payload: false })
     }
 
     return (
@@ -69,8 +68,8 @@ const Card = ({ type, image, name, id, hp, attack, defence, speed }) => {
                     <img src={backCard} alt="back card image" />
                 </div>
                 <div className="frontCard">
-                    <small className="compareIcon compareIcon1" id={id} onClick={compareButtonClick}>1</small>
-                    <small className="compareIcon compareIcon2" id={id} onClick={compareButtonClick}>2</small>
+                    {isCompare && <small className="compareIcon compareIcon1" id={id} onClick={compareButtonClick}>1</small>}
+                    {isCompare && < small className="compareIcon compareIcon2" id={id} onClick={compareButtonClick}>2</small>}
                     <Icon icon="ant-design:heart-filled" className={`heartIcon ${ heartActive }`} onClick={handleHeartClick} id={id} />
                     {/* <p className="hp">hp {hp}</p> */}
                     <div className="cardImageContaier">
@@ -90,7 +89,7 @@ const Card = ({ type, image, name, id, hp, attack, defence, speed }) => {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 }
 

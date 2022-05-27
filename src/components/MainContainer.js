@@ -1,20 +1,17 @@
 //hooks
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 //components
 import Card from './Card'
+import Pagination from './Pagination';
 //context
 import { PokemonContext } from '../context/PokemonContext';
-import Pagination from './Pagination';
 
 
-const MainContainer = ({ isSearching, setIsSearching }) => {
+const MainContainer = ({ isSearching, isCompare }) => {
 
     //context
     const context = useContext(PokemonContext)
-    const { dispatch, data, isLoading, currentPage, searchValue, watchlist } = context
-
-    // const [currentPage, setCurrentPage] = useState(1);
-    //const [numOfPages, setNumOfPages] = useState(null);
+    const { dispatch, data, isLoading, currentPage, searchValue } = context
 
     const maxNumPokemon = 898
     // const maxNumPokemon = 150
@@ -53,10 +50,10 @@ const MainContainer = ({ isSearching, setIsSearching }) => {
     return (
         <main className="mainContainer container">
             {!isLoading && data && !isSearching && data.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} attack={item.stats[1].base_stat} defence={item.stats[2].base_stat} speed={item.stats[5].base_stat} />
+                <Card key={item.id} isCompare={isCompare} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} attack={item.stats[1].base_stat} defence={item.stats[2].base_stat} speed={item.stats[5].base_stat} />
             ))}
             {!isLoading && searchValue && isSearching && searchValue.map(item => (
-                <Card key={item.id} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} attack={item.stats[1].base_stat} defence={item.stats[2].base_stat} speed={item.stats[5].base_stat} />
+                <Card key={item.id} isCompare={isCompare} name={item.name} image={item.sprites.other['official-artwork'].front_default} type={item.types[0].type.name} id={item.id} hp={item.stats[0].base_stat} attack={item.stats[1].base_stat} defence={item.stats[2].base_stat} speed={item.stats[5].base_stat} />
             ))}
             {!isLoading && !isSearching && <Pagination />}
         </main>

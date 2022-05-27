@@ -405,7 +405,7 @@ form.container{
     background-color: var(--white);
     border-radius: 20px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 20px;
 }
 .pokemon1ImageContainer,.pokemon2ImageContainer{
@@ -430,8 +430,14 @@ form.container{
     width: 100%;
     height: 100%;
 }
+.selectPokemonTitle{
+    margin:40px 0;
+    margin-bottom: 20px;
+    color: var(--black);
+}
 .compareTitle{
     color: var(--black);
+    color: var(--red-medium-pokemon);
     text-align: center;
     margin:20px auto;
 }
@@ -447,6 +453,7 @@ form.container{
     color: var(--dark-blue-pokemon);
     background-color: var(--yellow-pokemon);
     border-radius: 50px;
+    z-index: 200;
 }
 .blue{
     display: flex;
@@ -457,6 +464,7 @@ form.container{
     color: var(--white);
     background-color: var(--dark-blue-pokemon);
     border-radius: 50px;
+    z-index: 200;
 }
 .comparePokemonNames{
     display: flex;
@@ -467,12 +475,14 @@ form.container{
     margin-bottom: 20px;
 }
 .pokemonName1{
-    color: var(--yellow-pokemon);
+    color: var();
+    /* color: var(--yellow-pokemon);
     -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: #baa400;
+    -webkit-text-stroke-color: #baa400; */
 }
 .pokemonName2{
     color: var(--dark-blue-pokemon);
+    color: var(--black);
 }
 .compareStats{
     display: flex;
@@ -487,6 +497,25 @@ form.container{
 }
 .compareText{
     font-size: 1.2rem;
+}
+.compareBtn{
+    margin-top:40px;
+    padding: 5px 10px;
+    color: var(--white);
+    color: var(--black);
+    font-size: 1.2rem;
+    font-family: inherit;
+    background-color: var(--red-medium-pokemon);
+    background-color: var(--yellow-pokemon);
+    cursor: pointer;
+    border: 1px solid transparent;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+.compareBtn:hover{
+    border-color: var(--yellow-pokemon);
+    color: var(--black);
+    background-color: var(--white);
 }
 /* pagination */
 .paginationContainer{
@@ -513,7 +542,7 @@ form.container{
 }
 /* spinner */
 .spinnerContainer{
-    transform: translateY(-280px);
+    transform: translateY(-400px);
     /* margin-top: 50px; */
 }
 .spinnerImageContainer{
