@@ -8,7 +8,7 @@ This project is for a 3SC Web Developer Test. This task is designed to assess ho
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-### Get started. 
+### Get started
 
 ### Install Dependencies
 
