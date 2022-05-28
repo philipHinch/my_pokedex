@@ -1,10 +1,8 @@
 # myPokedex
 
-This project is for a 3SC Web Developer Test. This task is designed to assess how you will go about building a web application and you must demonstrate your ability to write:
+This project is for a 3SC Web Developer Test. 
 
-- Readable and well laid out code
-- JS / HTML and CSS
-- Appropriate documentation (How would another developer get started your code?)
+**myPokedex** is an app that will allow you to view all the pokemons of the pokemon universe. Opening the app will display a grid of pokemon cards split into multiple pages. A fetch request is sent to the [Poke API](https://pokeapi.co/) which will then respond with all the pokemon data. **Pagination** feature has been implemented for better user experience. The **Search** input will allow you to search any pokemon in the database. Save or remove pokemon to/from your **Favourites** just by clicking on the **Heart** icon on the pokemon card. Saved pokemon will save the **ID** of each pokemon in the **local storage**. View your favourite pokemons by clicking on the **Favourites** button. Activate the "compare mode" which will allow you to start comparing pokemon to one another. Clicking on the **Compare** button will add extra buttons on the pokemon card which will allow you to selecct pokemon 1 or pokemon 2 for comparing. 
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
