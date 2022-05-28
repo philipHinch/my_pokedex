@@ -334,6 +334,7 @@ form.container{
     overflow: hidden;
     background-color: #0075BE;
     z-index: 2;
+    transform: rotateX(0);
 }
 .backCard img{
     width: 100%;
