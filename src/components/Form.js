@@ -16,16 +16,14 @@ const Form = ({ setIsSearching, isCompare, setIsCompare, setIsFavourites, setFav
         dispatch({ type: 'SET_IS_LOADING', payload: true })
         let word = e.target.value.toLowerCase()
         //set if searching or not
-        if (word.length === 0) {
-            setIsSearching(false)
-        } else {
-            setIsSearching(true)
-        }
+        word.length === 0 ? setIsSearching(false) : setIsSearching(true)
+        //filter data with search value
         let filteredArr = allPokemonsData.filter(pokemon => {
             if (pokemon.name.toLowerCase().includes(word)) {
                 return true
             }
         })
+        //send filterd data to context
         dispatch({ type: 'SET_SEARCH_VALUE', payload: filteredArr })
         dispatch({ type: 'SET_IS_LOADING', payload: false })
     }
@@ -35,6 +33,7 @@ const Form = ({ setIsSearching, isCompare, setIsCompare, setIsFavourites, setFav
         setIsCompare(!isCompare)
     }
 
+    //handles favourite button click and gets favourites data
     const handleFavouritesClick = () => {
         setIsFavourites(true)
         getFavouritesData()
