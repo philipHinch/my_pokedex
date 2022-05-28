@@ -6,6 +6,22 @@ This project is for a 3SC Web Developer Test. This task is designed to assess ho
 - JS / HTML and CSS
 - Appropriate documentation (How would another developer get started your code?)
 
+![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
+
+### Get started. 
+
+### Install Dependencies
+
+```
+npm install
+```
+
+### Run
+
+```
+npm start
+```
+
 [View Project](https://my-pokedex-nu.vercel.app/)
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
