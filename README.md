@@ -12,6 +12,8 @@ This project is for a 3SC Web Developer Test.
 
 ### Get started:
 
+Fork the project or download the zip folder. With the terminal open the project directory and run the following commands:
+
 #### Install Dependencies
 
 ```
