@@ -36,6 +36,8 @@ npm start
 - Async/Await (asyncronous programming)
 - CSS Animations
 
+Note: I chose to use **React** rather than **Vanilla JavaScript** because of how smooth **React** applications are and how easy it is to insert HTML elements with JSX instead of the long process of creating elements an appending text and classes to them with plain JS. Also with this project it was important to manage state and keep things syncronised. React does a great job with that with hoooks such as useContext, useReducer and useState.
+
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
 ### Challenges:
@@ -45,6 +47,7 @@ npm start
 ### What extra features can be added:
 
 - Clicking on the card will show the details of that specific pokemon. Clicking on it again will revert to showing the name and type.
+- Toast notifications when adding/removing pokemon to/from favourites.
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
