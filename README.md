@@ -8,13 +8,13 @@ This project is for a 3SC Web Developer Test.
 
 ### Get started
 
-### Install Dependencies
+#### Install Dependencies
 
 ```
 npm install
 ```
 
-### Run
+#### Run
 
 ```
 npm start
