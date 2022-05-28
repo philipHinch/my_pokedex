@@ -30,14 +30,15 @@ npm start
 
 - React
 - React Hooks
-- useContext/useReducer/useState (state management)
-- High Order Functions (map, filter)
+- useContext/useReducer/useState (State Management)
+- High Order Functions (Map, Filter)
 - Fetch API
-- Async/Await (asyncronous programming)
+- Async/Await (Asyncronous Programming)
 - CSS Animations
 
 Note: 
-I chose to use **React** rather than **Vanilla JavaScript** because of how smooth **React** applications are and how easy it is to insert HTML elements with JSX instead of the long process of creating elements an appending text and classes to them with plain JS. Also with this project it was important to manage state and keep things syncronised. React does a great job with that with hoooks such as useContext, useReducer and useState.
+&nbsp;
+I chose to use **React** rather than **Vanilla JavaScript** because of how smooth **React** applications are and how easy it is to insert HTML elements with JSX instead of the long process of creating elements an appending text and classes to them with plain JS. Also with this project it was important to manage state and keep things syncronized. React does a great job with that with hoooks such as useContext, useReducer and useState.
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
