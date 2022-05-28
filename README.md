@@ -8,7 +8,7 @@ This project is for a 3SC Web Developer Test.
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-### Get started
+### Get started:
 
 #### Install Dependencies
 
@@ -26,23 +26,34 @@ npm start
 
 ## Technologies used:
 
-- react
-- react hooks
-- useContext & useReducer
-- fetch api
-- async/await
-- css animations
+- React
+- React Hooks
+- useContext/useReducer/useState (state management)
+- High Order Functions (map, filter)
+- Fetch API
+- Async/Await (asyncronous programming)
+- CSS Animations
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-Desktop:
+## Challenges:
+
+- The pagination implementation was quite tricky and I had to format the data in a way that it was easier to work with. 
+
+## What extra features can be added:
+
+- Clicking on the card will show the details of that specific pokemon. Clicking on it again will revert to showing the name and type.
+
+![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
+
+Desktop Previews:
 &nbsp;
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview.png?raw=true)
 ---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview_2.png?raw=true)
 ---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_desktop_preview_3.png?raw=true)
-Mobile:
+Mobile Previews:
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_mobile_preview.jpg?raw=true)
 ---
 ![This is an image](https://github.com/philipHinch/my_pokedex/blob/main/src/assets/previews/pokedex_mobile_preview_2.jpg?raw=true)
