@@ -35,6 +35,8 @@ npm start
 - Fetch API
 - Async/Await (Asyncronous Programming)
 - CSS Animations
+- CCS Pseudo Elements
+- CSS Variables
 
 Note: 
 &nbsp;
@@ -45,6 +47,7 @@ I chose to use **React** rather than **Vanilla JavaScript** because of how smoot
 ### Challenges:
 
 - The pagination implementation was quite tricky and I had to format the data in a way that it was easier to work with. 
+- Fetching all the pokemon id's and fetching once again to get the data for every pokemon id.
 
 ### What extra features can be added:
 
