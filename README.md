@@ -26,7 +26,7 @@ npm start
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-##Technologies used:
+## Technologies used:
 
 - react
 - react hooks
