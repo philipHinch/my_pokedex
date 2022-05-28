@@ -26,7 +26,7 @@ npm start
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-## Technologies used:
+### Technologies used:
 
 - React
 - React Hooks
@@ -38,11 +38,11 @@ npm start
 
 ![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
-## Challenges:
+### Challenges:
 
 - The pagination implementation was quite tricky and I had to format the data in a way that it was easier to work with. 
 
-## What extra features can be added:
+### What extra features can be added:
 
 - Clicking on the card will show the details of that specific pokemon. Clicking on it again will revert to showing the name and type.
 
